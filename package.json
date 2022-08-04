@@ -11,6 +11,9 @@
     "client": "npm run start --prefix client",
     "dev": "npm run server | npm run client"
   },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
