@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const path = require("path");
 const planetsRouter = require("./routes/planets/router");
+const launchesRouter = require("./routes/launches/router");
 
 const app = express();
 app.use(
@@ -13,6 +14,7 @@ app.use(
 app.use(morgan("combined"));
 app.use(express.json());
 app.use(planetsRouter);
+app.use(launchesRouter);
 app.use(express.static(path.join(__dirname, "../client-build")));
 
 module.exports = app;
