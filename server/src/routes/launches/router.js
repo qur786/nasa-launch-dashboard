@@ -4,4 +4,4 @@ const { getAllLaunches } = require("./controllers");
 const launchesRouter = Router();
 launchesRouter.get("/launches", getAllLaunches);
 
-module.exports = launchesRouter;
+module.exports = { launchesRouter };
