@@ -6,7 +6,7 @@ const launch = {
   flightNumber: 1,
   mission: "Mark 1",
   target: "Kepler-442 b",
-  customer: ["NASA"],
+  customers: ["NASA"],
   rocket: "Jarvis 1",
   launchDate: new Date(1999, 2, 29),
   upcoming: true,
@@ -32,7 +32,20 @@ function addNewLaunch(launch) {
   );
 }
 
+function isLaunchExists(launchID) {
+  return launches.has(launchID);
+}
+
+function abortLaunch(launchID) {
+  let abortedLaunch = launches.get(launchID);
+  abortedLaunch.upcoming = false;
+  abortedLaunch.success = false;
+  return abortedLaunch;
+}
+
 module.exports = {
   getAllLaunches,
-  addNewLaunch
+  addNewLaunch,
+  isLaunchExists,
+  abortLaunch
 };
