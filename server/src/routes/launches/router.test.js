@@ -47,4 +47,11 @@ describe("Test DELETE /launch/:id", () => {
   test("It should return 200", async () => {
     await request(app).delete("/launches/1").expect(200);
   });
+
+  test("It should catch Launch not found error", async () => {
+    const response = await request(app).delete("/launches/1000").expect(404);
+    expect(response.body).toStrictEqual({
+      error: "Launch does not found"
+    });
+  });
 });
