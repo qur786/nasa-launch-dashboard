@@ -42,3 +42,9 @@ describe("Test POST /launches", () => {
     });
   });
 });
+
+describe("Test DELETE /launch/:id", () => {
+  test("It should return 200", async () => {
+    await request(app).delete("/launches/1").expect(200);
+  });
+});
