@@ -26,4 +26,19 @@ describe("Test POST /launches", () => {
       error: "Missing required attributes"
     });
   });
+
+  test("It should catch invalid date error", async () => {
+    const response = await request(app)
+      .post("/launches")
+      .send({
+        mission: "Mark 1",
+        target: "Kepler-442 b",
+        rocket: "Jarvis 1",
+        launchDate: "invalid date"
+      })
+      .expect(400);
+    expect(response.body).toStrictEqual({
+      error: "Launch date is not valid"
+    });
+  });
 });
