@@ -6,12 +6,28 @@ function httpGetAllLaunches(_req, res) {
 
 function httpAddNewLaunch(req, res) {
   let launch = req.body;
-  launch = {
-    ...launch,
-    launchDate: new Date(launch.launchDate)
-  };
+  let response = launch;
+  let status = 201;
+  const { launchDate, mission, destination, rocket } = launch;
+  if (!launchDate || !mission || !destination || !rocket) {
+    response = {
+      error: "Missing required attributes"
+    };
+    status = 400;
+  } else if (isNaN(launchDate) === true) {
+    response = {
+      error: "Launch date is not valid"
+    };
+    status = 400;
+  } else {
+    launch = {
+      ...launch,
+      launchDate: new Date(launchDate)
+    };
+    response = launch;
+  }
   addNewLaunch(launch);
-  return res.status(201).json(launch);
+  return res.status(status).json(response);
 }
 
 module.exports = {
