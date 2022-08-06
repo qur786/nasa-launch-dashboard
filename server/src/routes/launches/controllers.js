@@ -8,13 +8,13 @@ function httpAddNewLaunch(req, res) {
   let launch = req.body;
   let response = launch;
   let status = 201;
-  const { launchDate, mission, destination, rocket } = launch;
-  if (!launchDate || !mission || !destination || !rocket) {
+  const { launchDate, mission, target, rocket } = launch;
+  if (!launchDate || !mission || !target || !rocket) {
     response = {
       error: "Missing required attributes"
     };
     status = 400;
-  } else if (isNaN(launchDate) === true) {
+  } else if (isNaN(new Date(launchDate))) {
     response = {
       error: "Launch date is not valid"
     };
