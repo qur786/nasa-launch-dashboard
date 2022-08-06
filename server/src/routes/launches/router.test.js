@@ -19,4 +19,11 @@ describe("Test POST /launches", () => {
       })
       .expect(201);
   });
+
+  test("It should catch missing value error", async () => {
+    const response = await request(app).post("/launches").send({}).expect(400);
+    expect(response.body).toStrictEqual({
+      error: "Missing required attributes"
+    });
+  });
 });
