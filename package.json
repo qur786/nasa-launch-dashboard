@@ -11,7 +11,8 @@
     "client": "npm run start --prefix client",
     "dev": "npm run server | npm run client",
     "deploy": "npm run build --prefix client && npm start --prefix server",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "test": "npm test --prefix server"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
