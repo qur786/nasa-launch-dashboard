@@ -25,7 +25,7 @@ function httpAddNewLaunch(req, res) {
     status = 400;
   } else {
     launch = {
-      ...launch,
+      ...req.body,
       launchDate: new Date(launchDate)
     };
     response = launch;
