@@ -1,4 +1,4 @@
-# Nasa-Launch-Dashboard
+# Nasa Launch Dashboard
 
 A futuristic dashboard simulating the launch of NASA rockets for habitable exoplanets.
 
