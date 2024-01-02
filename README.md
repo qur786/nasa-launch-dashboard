@@ -8,4 +8,4 @@ This project serves as a demonstration and showcase of backend development capab
 
 ### Demo
 
-![Demo](https://user-images.githubusercontent.com/79472606/183459026-e7549888-cf9f-4d84-8e83-c4794a45a6c5.mp4)
+https://user-images.githubusercontent.com/79472606/183459026-e7549888-cf9f-4d84-8e83-c4794a45a6c5.mp4
